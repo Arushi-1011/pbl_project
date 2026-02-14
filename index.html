@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Speech Therapy Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .highlight {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Smart Speech Therapy Assistant</h1>
+<h3>A Generative AI-Based Framework for Automated Assessment and Personalized Intervention</h3>
+
+<div class="section">
+<h2>Hypothesis / Project Statement</h2>
+<p>
+Can a Generative AI-assisted system automatically assess speech patterns and generate personalized therapy exercises while maintaining a human-in-the-loop supervision model?
+</p>
+</div>
+
+<div class="section">
+<h2>Problem Statement</h2>
+<p>
+Speech therapy is manual, time-intensive, and difficult to scale. There is limited accessibility and personalization in current therapy systems. Existing AI systems focus only on speech classification and do not provide adaptive therapy generation or continuous progress tracking.
+</p>
+</div>
+
+<div class="section">
+<h2>Literature Review / Market Research</h2>
+<ul>
+<li>CNN/LSTM-based speech disorder detection</li>
+<li>ASR-based phoneme scoring systems</li>
+<li>Static therapy mobile applications</li>
+</ul>
+<p>
+However, no integrated Generative AI system exists for personalized therapy planning with human supervision.
+</p>
+</div>
+
+<div class="section">
+<h2>Research Gap / Innovation</h2>
+<ul>
+<li>Baseline acoustic assessment model (Implemented)</li>
+<li>MFCC-based feature extraction</li>
+<li>Generative AI for therapy plan generation</li>
+<li>Adaptive feedback system</li>
+<li>Human-in-the-loop validation</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>System Methodology</h2>
+<h3>Dataset</h3>
+<ul>
+<li>Dataset: TORGO (Female speakers F01, F03, F04)</li>
+<li>Total files: 537</li>
+<li>Valid processed samples: 535</li>
+<li>Preprocessing: 16kHz resampling, silence trimming, fixed 2s duration</li>
+</ul>
+
+<h3>Current Implemented Pipeline</h3>
+<div class="highlight">
+Speech Input → Preprocessing → MFCC Feature Extraction → Random Forest Classifier → Acoustic Assessment Output
+</div>
+
+<h3>Future Extension</h3>
+<div class="highlight">
+Assessment Output → Generative AI Module → Personalized Therapy Plan → Adaptive Feedback → Progress Tracking
+</div>
+</div>
+
+<div class="section">
+<h2>Results & Analysis</h2>
+<p><strong>Baseline Model Accuracy: 90.65%</strong></p>
+<p>
+Evaluation Metrics: Precision, Recall, F1-score across 3 speaker classes.
+This validates effectiveness of preprocessing and acoustic feature extraction.
+</p>
+</div>
+
+<div class="section">
+<h2>Ethics & Safety</h2>
+<ul>
+<li>No autonomous medical diagnosis</li>
+<li>Human therapist approval required</li>
+<li>Voice data privacy protection</li>
+<li>Bias monitoring across speakers</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Academic Credits</h2>
+<p><strong>Project Guide:</strong> [Guide Name]</p>
+<p><strong>Student:</strong> Arushi Srivastava</p>
+<p><strong>Reg ID:</strong> FULL_REGISTRATION_ID_HERE</p>
+</div>
+
+</body>
+</html>
