@@ -2,47 +2,68 @@
 <html>
 <head>
     <title>Smart Speech Therapy Assistant</title>
-<style>
-    body {
-        font-family: 'Segoe UI', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9fafc;
-        color: #2c3e50;
-    }
-    header {
-        background: linear-gradient(90deg, #1e3c72, #2a5298);
-        color: white;
-        padding: 40px;
-        text-align: center;
-    }
-    section {
-        padding: 40px;
-        margin: 20px auto;
-        max-width: 900px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-    h2 {
-        color: #1e3c72;
-    }
-    .highlight {
-        background-color: #eef4ff;
-        padding: 15px;
-        border-left: 4px solid #2a5298;
-        margin-top: 10px;
-    }
-    footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #1e3c72;
-        color: white;
-        margin-top: 40px;
-    }
-</style>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafc;
+            color: #2c3e50;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header h3 {
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        section {
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 900px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #1e3c72;
+        }
+
+        .highlight {
+            background-color: #eef4ff;
+            padding: 15px;
+            border-left: 5px solid #2a5298;
+            margin-top: 15px;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #1e3c72;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
 
 </head>
+
 <body>
 
 <header>
@@ -50,95 +71,94 @@
     <h3>A Generative AI-Based Framework for Automated Assessment and Personalized Intervention</h3>
 </header>
 
-
 <section>
-<h2>Hypothesis / Project Statement</h2>
-<p>
-Can a Generative AI-assisted system automatically assess speech patterns and generate personalized therapy exercises while maintaining a human-in-the-loop supervision model?
-</p>
-</section>
-
-
-<section>
-<h2>Problem Statement</h2>
-<p>
-Speech therapy is manual, time-intensive, and difficult to scale. There is limited accessibility and personalization in current therapy systems. Existing AI systems focus only on speech classification and do not provide adaptive therapy generation or continuous progress tracking.
-</p>
+    <h2>Hypothesis / Project Statement</h2>
+    <p>
+        Can a Generative AI-assisted system automatically assess speech patterns and generate personalized therapy exercises while maintaining a human-in-the-loop supervision model?
+    </p>
 </section>
 
 <section>
-<h2>Literature Review / Market Research</h2>
-<ul>
-<li>CNN/LSTM-based speech disorder detection</li>
-<li>ASR-based phoneme scoring systems</li>
-<li>Static therapy mobile applications</li>
-</ul>
-<p>
-However, no integrated Generative AI system exists for personalized therapy planning with human supervision.
-</p>
-</section>
-    
-<section>
-<h2>Research Gap / Innovation</h2>
-<ul>
-<li>Baseline acoustic assessment model (Implemented)</li>
-<li>MFCC-based feature extraction</li>
-<li>Generative AI for therapy plan generation</li>
-<li>Adaptive feedback system</li>
-<li>Human-in-the-loop validation</li>
-</ul>
-</section>
-    
-<section>
-<h2>System Methodology</h2>
-<h3>Dataset</h3>
-<ul>
-<li>Dataset: TORGO (Female speakers F01, F03, F04)</li>
-<li>Total files: 537</li>
-<li>Valid processed samples: 535</li>
-<li>Preprocessing: 16kHz resampling, silence trimming, fixed 2s duration</li>
-</ul>
-
-<h3>Current Implemented Pipeline</h3>
-<div class="highlight">
-Speech Input → Preprocessing → MFCC Feature Extraction → Random Forest Classifier → Acoustic Assessment Output
-</div>
-
-<h3>Future Extension</h3>
-<div class="highlight">
-Assessment Output → Generative AI Module → Personalized Therapy Plan → Adaptive Feedback → Progress Tracking
-</div>
+    <h2>Problem Statement</h2>
+    <p>
+        Speech therapy is manual, time-intensive, and difficult to scale. There is limited accessibility and personalization in current therapy systems. Existing AI systems focus only on speech classification and do not provide adaptive therapy generation or continuous progress tracking.
+    </p>
 </section>
 
 <section>
-<h2>Results & Analysis</h2>
-<p><strong>Baseline Model Accuracy: 90.65%</strong></p>
-<p>
-Evaluation Metrics: Precision, Recall, F1-score across 3 speaker classes.
-This validates effectiveness of preprocessing and acoustic feature extraction.
-</p>
+    <h2>Literature Review / Market Research</h2>
+    <ul>
+        <li>CNN/LSTM-based speech disorder detection</li>
+        <li>ASR-based phoneme scoring systems</li>
+        <li>Static therapy mobile applications</li>
+    </ul>
+    <p>
+        However, no integrated Generative AI system exists for personalized therapy planning with human supervision.
+    </p>
 </section>
 
 <section>
-<h2>Ethics & Safety</h2>
-<ul>
-<li>No autonomous medical diagnosis</li>
-<li>Human therapist approval required</li>
-<li>Voice data privacy protection</li>
-<li>Bias monitoring across speakers</li>
-</ul>
+    <h2>Research Gap / Innovation</h2>
+    <ul>
+        <li>Baseline acoustic assessment model (Implemented)</li>
+        <li>MFCC-based feature extraction</li>
+        <li>Generative AI for therapy plan generation</li>
+        <li>Adaptive feedback system</li>
+        <li>Human-in-the-loop validation</li>
+    </ul>
 </section>
 
 <section>
-<h2>Academic Credits</h2>
-<p><strong>Project Guide:</strong> [Guide Name]</p>
-<p><strong>Student:</strong> Arushi Srivastava</p>
-<p><strong>Reg ID:</strong> FULL_REGISTRATION_ID_HERE</p>
+    <h2>System Methodology</h2>
+
+    <h3>Dataset</h3>
+    <ul>
+        <li>Dataset: TORGO (Female speakers F01, F03, F04)</li>
+        <li>Total files collected: 537</li>
+        <li>Valid processed samples: 535</li>
+        <li>Preprocessing: 16kHz resampling, silence trimming, fixed 2-second duration, corrupted file removal</li>
+    </ul>
+
+    <h3>Current Implemented Pipeline</h3>
+    <div class="highlight">
+        Speech Input → Preprocessing → MFCC Feature Extraction → Random Forest Classifier → Acoustic Assessment Output
+    </div>
+
+    <h3>Future Extension</h3>
+    <div class="highlight">
+        Assessment Output → Generative AI Module → Personalized Therapy Plan → Adaptive Feedback → Progress Tracking
+    </div>
 </section>
 
-</body>
+<section>
+    <h2>Results & Analysis</h2>
+    <p><strong>Baseline Model Accuracy: 90.65%</strong></p>
+    <p>
+        Evaluation Metrics: Precision, Recall, F1-score across three speaker classes.
+        This validates the effectiveness of preprocessing and acoustic feature extraction.
+    </p>
+</section>
+
+<section>
+    <h2>Ethics & Safety</h2>
+    <ul>
+        <li>No autonomous medical diagnosis</li>
+        <li>Human therapist approval required</li>
+        <li>Voice data privacy protection</li>
+        <li>Bias monitoring across speakers</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Academic Credits</h2>
+    <p><strong>Project Guide:</strong> [Guide Name]</p>
+    <p><strong>Student:</strong> Arushi Srivastava</p>
+    <p><strong>Reg ID:</strong> YOUR_FULL_REGISTRATION_ID</p>
+</section>
+
 <footer>
     Smart Speech Therapy Assistant | PBL Project 2026
 </footer>
 
+</body>
 </html>
