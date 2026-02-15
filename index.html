@@ -104,24 +104,17 @@ This is a more comprehensive approach than the current systems that mainly use a
                 <div class="glass p-8 rounded-3xl text-center">
                     <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
                     <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Dataset / Input</h3>
-                    <p class="text-sm text-slate-500">Dataset Used: TORGO Speech Dataset
+                    <p class="text-sm text-slate-500">
+• Dataset: TORGO Speech Dataset <br>
+• Speakers: F01, F03, F04 <br>
+• Total Files: 537 <br>
+• Valid Samples: 535 <br>
+• Resampled to 16 kHz <br>
+• Silence trimming applied <br>
+• Duration normalized to 2 seconds <br>
+• Features extracted: MFCC
+</p>
 
-Speakers Selected: Female speakers (F01, F03, F04)
-
-Total Files Collected: 537 audio samples
-
-Valid Processed Samples: 535 (after removing corrupted files)
-
-Preprocessing Steps:
-Resampled all audio to 16 kHz
-
-Applied silence trimming
-
-Normalized duration to 2 seconds per sample
-
-Removed corrupted or unreadable audio files
-
-Feature Extraction: MFCC (Mel Frequency Cepstral Coefficients) for acoustic representation</p>
                 </div>
                 <div class="glass p-8 rounded-3xl text-center">
                     <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
@@ -149,7 +142,7 @@ Achieved 90.65% accuracy, validating the effectiveness of the preprocessing and 
                 <div class="glass p-8 rounded-3xl text-center border-2 border-green-500/20 bg-green-500/5">
                     <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
                     <h3 class="font-bold mb-4 uppercase text-xs tracking-widest text-green-400">Live Execution</h3>
-                    <a href="[LINK]" target="_blank" class="px-6 py-2 bg-green-600 rounded-full text-[10px] font-black hover:bg-green-500 transition shadow-lg shadow-green-900/40">VIEW CODE / DEMO</a>
+                    <a href="https://github.com/arushi-1011/pbl_project" target="_blank" class="px-6 py-2 bg-green-600 rounded-full text-[10px] font-black hover:bg-green-500 transition shadow-lg shadow-green-900/40">VIEW CODE / DEMO</a>
                 </div>
             </div>
         </section>
@@ -161,9 +154,10 @@ Achieved 90.65% accuracy, validating the effectiveness of the preprocessing and 
                 <div class="space-y-6">
                     <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner">
                         <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Accuracy / Performance</span>
-                        <span class="text-blue-400 font-mono font-black text-3xl">XX.X%</span>
+                        <span class="text-blue-400 font-mono font-black text-3xl">90.65%</span>
                     </div>
-                    <p class="text-slate-500 text-sm italic text-justify leading-relaxed">Quantifiable outcomes and evaluation metrics compared to baselines.</p>
+                    <p class="text-slate-500 text-sm italic text-justify leading-relaxed">The model achieved 90.65% classification accuracy across three speaker classes, demonstrating effective acoustic feature extraction and robust baseline performance.
+</p>
                 </div>
             </div>
         </section>
@@ -219,7 +213,7 @@ Achieved 90.65% accuracy, validating the effectiveness of the preprocessing and 
             data: {
                 labels: ['Existing System', 'Our Solution'],
                 datasets: [{
-                    data: [70, 92],
+                    data: [70, 90.65],
                     backgroundColor: ['#1e293b', '#3b82f6'],
                     borderRadius: 15,
                     barThickness: 50
