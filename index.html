@@ -131,25 +131,29 @@
                 <div class="glass p-8 rounded-3xl text-center">
                     <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
                     <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Model / Architecture</h3>
-                    <p class="text-sm text-slate-500">Feature Extraction:
-Mel Frequency Cepstral Coefficients (MFCC) were extracted from each processed audio sample to capture perceptually relevant acoustic features.
+                    <ul class="text-sm text-slate-500 italic space-y-3 list-disc pl-6 text-justify">
 
-Machine Learning Model:
-A Random Forest classifier was used for baseline acoustic assessment.
+    <li>
+        <strong>Feature Extraction:</strong> Mel Frequency Cepstral Coefficients (MFCC) were extracted from each processed audio sample to capture perceptually relevant acoustic features.
+    </li>
 
-Training Strategy:
+    <li>
+        <strong>Machine Learning Model:</strong> A Random Forest classifier was implemented for baseline acoustic speech assessment.
+    </li>
 
-80% training data
+    <li>
+        <strong>Training Strategy:</strong> The dataset was split into 80% training data and 20% testing data. The model was evaluated using accuracy, precision, recall, and F1-score.
+    </li>
 
-20% testing data
+    <li>
+        <strong>System Workflow:</strong> Speech Input → Preprocessing → MFCC Extraction → Random Forest Classification → Assessment Output.
+    </li>
 
-Model evaluated using accuracy, precision, recall, and F1-score
+    <li>
+        <strong>Baseline Performance:</strong> The model achieved 90.65% classification accuracy, validating the effectiveness of the preprocessing and feature extraction pipeline.
+    </li>
 
-System Workflow:
-Speech Input → Preprocessing → MFCC Extraction → Random Forest Classification → Assessment Output
-
-Baseline Performance:
-Achieved 90.65% accuracy, validating the effectiveness of the preprocessing and feature extraction pipeline.</p>
+</ul>
                 </div>
                 <div class="glass p-8 rounded-3xl text-center border-2 border-green-500/20 bg-green-500/5">
                     <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
