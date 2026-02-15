@@ -20,7 +20,7 @@
         .timer-stop { background-color: #991b1b !important; color: #ffffff !important; border: 3px solid #f87171 !important; animation: none; }
     </style>
 </head>
-<body onload="startTimer()">
+<body>
 
     <div id="timerContainer" class="fixed bottom-10 right-10 px-8 py-4 rounded-3xl flex items-center gap-4 transition-all">
         <i class="fas fa-hourglass-start text-blue-600 text-2xl" id="timerIcon"></i>
@@ -200,51 +200,71 @@
     </footer>
 
     <script>
-        // TIMER LOGIC
-        let sec = 0;
-        let timer = null;
-        function startTimer() {
-            timer = setInterval(() => {
-                sec++;
-                let m = Math.floor(sec / 60);
-                let s = sec % 60;
-                document.getElementById('displayTime').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-                
-                if (sec >= 480 && sec < 600) { // 8-10 Mins Warning
-                    document.getElementById('timerContainer').classList.add('timer-warning');
-                    document.getElementById('timerIcon').classList.replace('fa-hourglass-start', 'fa-hourglass-half');
-                } else if (sec >= 600) { // 10 Mins Stop
-                    clearInterval(timer);
-                    document.getElementById('timerContainer').classList.replace('timer-warning', 'timer-stop');
-                    document.getElementById('displayTime').innerText = "10:00";
-                    document.getElementById('timerIcon').classList.replace('fa-hourglass-half', 'fa-hourglass-end');
+    let sec = 0;
+    let timer = null;
+
+    // Start everything after page fully loads
+    window.addEventListener("load", function () {
+
+        // TIMER
+        timer = setInterval(() => {
+            sec++;
+
+            let m = Math.floor(sec / 60);
+            let s = sec % 60;
+
+            document.getElementById('displayTime').innerText =
+                m.toString().padStart(2, '0') + ":" +
+                s.toString().padStart(2, '0');
+
+            if (sec >= 480 && sec < 600) {
+                document.getElementById('timerContainer').classList.add('timer-warning');
+            }
+
+            if (sec >= 600) {
+                clearInterval(timer);
+            }
+
+        }, 1000);
+
+
+        // CHART
+        const canvas = document.getElementById('resultsChart');
+        if (canvas && typeof Chart !== "undefined") {
+            const ctx = canvas.getContext('2d');
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Existing System', 'Our Solution'],
+                    datasets: [{
+                        data: [70, 90.65],
+                        backgroundColor: ['#1e293b', '#3b82f6'],
+                        borderRadius: 15,
+                        barThickness: 50
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#ffffff05' },
+                            ticks: { color: '#475569' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#475569' }
+                        }
+                    }
                 }
-            }, 1000);
+            });
         }
 
-        // RESULTS CHART (Demo Data)
-        const ctx = document.getElementById('resultsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Existing System', 'Our Solution'],
-                datasets: [{
-                    data: [70, 90.65],
-                    backgroundColor: ['#1e293b', '#3b82f6'],
-                    borderRadius: 15,
-                    barThickness: 50
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: { 
-                    y: { beginAtZero: true, grid: { color: '#ffffff05' }, ticks: { color: '#475569' } },
-                    x: { grid: { display: false }, ticks: { color: '#475569' } }
-                }
-            }
-        });
-    </script>
+    });
+</script>
+
 </body>
 </html>
