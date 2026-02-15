@@ -2,154 +2,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Smart Speech Therapy Assistant | PBL 2026</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBL Presentation | 2026</title>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        body {
-            background-color: #020617;
-            color: #f8fafc;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+body {
+    background-color: #020617;
+    color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+}
 
-        .gradient-text {
-            background: linear-gradient(90deg, #60a5fa, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-        #timerContainer {
-            background: #ffffff;
-            color: #020617;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-            border: 3px solid #3b82f6;
-            z-index: 1000;
-        }
+.gradient-text {
+    background: linear-gradient(90deg, #60a5fa, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        footer {
-            background: #020617;
-        }
-    </style>
+/* TIMER UI */
+#timerContainer {
+    background: #ffffff;
+    color: #020617;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    border: 3px solid #3b82f6;
+    z-index: 1000;
+}
+</style>
 </head>
 
 <body onload="startTimer()">
 
-<!-- TIMER -->
 <div id="timerContainer" class="fixed bottom-10 right-10 px-8 py-4 rounded-3xl flex items-center gap-4">
     <i class="fas fa-hourglass-start text-blue-600 text-2xl"></i>
-    <span id="displayTime" class="text-4xl font-black font-mono tracking-tighter">00:00</span>
+    <span id="displayTime" class="text-4xl font-black font-mono tracking-tighter">10:00</span>
 </div>
 
-<!-- NAVBAR -->
 <nav class="fixed w-full z-50 glass border-b border-slate-800/50 px-8 py-4 flex justify-between items-center">
-    <div class="text-xl font-black uppercase tracking-tight">
-        PBL 2026
-    </div>
-    <div class="hidden md:flex gap-8 text-xs uppercase tracking-widest font-bold opacity-70">
-        <a href="#problem" class="hover:text-blue-400 transition">Problem</a>
-        <a href="#methodology" class="hover:text-blue-400 transition">Methodology</a>
-        <a href="#results" class="hover:text-blue-400 transition">Results</a>
-        <a href="#team" class="hover:text-blue-400 transition">Team</a>
+    <div class="flex items-center gap-4">
+        <div class="flex flex-col text-left">
+            <span class="text-xl font-black text-white leading-none uppercase tracking-tighter">
+                PBL <span class="text-blue-500 italic">2026</span>
+            </span>
+        </div>
     </div>
 </nav>
 
-<!-- MAIN CONTENT -->
 <main class="max-w-6xl mx-auto px-6 pt-48 pb-32 space-y-32">
 
-<!-- TITLE -->
 <section class="text-center">
-    <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-xs font-mono mb-6 uppercase tracking-widest">
+    <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">
         ID: 2427030204
     </div>
 
     <h1 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase leading-tight">
-        <span class="gradient-text">Smart Speech Therapy Assistant</span>
+        <span class="gradient-text uppercase">Smart Speech Therapy Assistant</span>
     </h1>
 
-    <p class="text-slate-400 max-w-3xl mx-auto italic text-lg leading-relaxed border-l-2 border-blue-500/30 pl-6 text-left">
-        This project focuses on developing a smart speech therapy assistant that analyzes speech patterns and generates personalized therapy suggestions using artificial intelligence.
+    <p class="text-slate-400 max-w-2xl mx-auto italic text-lg leading-relaxed border-l-2 border-blue-500/30 pl-6 text-left">
+        "Hypothesis/Project Statement: This project focuses on developing a smart speech therapy assistant that can analyze speech patterns and generate personalized therapy suggestions using artificial intelligence."
     </p>
 </section>
 
-<!-- PROBLEM SECTION -->
 <section id="problem" class="grid md:grid-cols-2 gap-12 items-stretch">
-
-    <div class="glass p-10 rounded-3xl border-l-4 border-blue-600">
+    <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600">
         <h2 class="text-3xl font-extrabold mb-6">Problem Statement</h2>
         <p class="text-slate-400 leading-relaxed text-justify">
-            Speech therapy requires continuous monitoring and personalized guidance, but access to trained professionals is limited and sessions can be costly. Existing digital tools mainly focus on detecting speech patterns without providing meaningful therapy recommendations. This creates a gap between speech assessment and effective intervention. A smarter and more adaptive system is needed to support speech improvement in a scalable and accessible way.
+            Describe the specific challenge you are addressing. Why is this project necessary?
         </p>
-    </div>
-
-    <div class="space-y-6">
-        <div class="glass p-7 rounded-3xl border-r-4 border-blue-500/50">
-            <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2">Literature Review</h3>
-            <p class="text-sm text-slate-500 italic">
-                Existing research includes CNN/LSTM-based speech disorder detection, ASR-based phoneme scoring systems, and static therapy applications. However, most systems focus only on classification and do not integrate therapy personalization.
-            </p>
-        </div>
-
-        <div class="glass p-7 rounded-3xl border-r-4 border-purple-500/50">
-            <h3 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-2">Research Gap</h3>
-            <p class="text-sm text-slate-500 italic">
-                This project combines acoustic speech assessment with AI-driven therapy suggestion within a unified framework, bridging the gap between speech detection and personalized intervention.
-            </p>
-        </div>
     </div>
 </section>
 
-<!-- METHODOLOGY -->
 <section id="methodology" class="space-y-12">
     <h2 class="text-4xl font-black text-center uppercase tracking-tight">
         System <span class="text-blue-500">Methodology</span>
     </h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-        <div class="glass p-8 rounded-3xl text-center">
-            <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
-            <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Dataset</h3>
-            <p class="text-sm text-slate-500">
-                TORGO Dataset (Female speakers F01, F03, F04). Total files: 537. Valid processed samples: 535. Preprocessing included 16kHz resampling, silence trimming, and duration normalization.
-            </p>
-        </div>
-
-        <div class="glass p-8 rounded-3xl text-center">
-            <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
-            <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Model</h3>
-            <p class="text-sm text-slate-500">
-                MFCC feature extraction followed by Random Forest classification. Baseline acoustic assessment validates speech pattern differentiation.
-            </p>
-        </div>
-
-        <div class="glass p-8 rounded-3xl text-center border-2 border-green-500/20 bg-green-500/5">
-            <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
-            <h3 class="font-bold mb-4 uppercase text-xs tracking-widest text-green-400">Implementation</h3>
-            <a href="https://github.com/YOUR_USERNAME/pbl_project" target="_blank"
-               class="px-6 py-2 bg-green-600 rounded-full text-xs font-black hover:bg-green-500 transition shadow-lg">
-                VIEW CODE
-            </a>
-        </div>
-
-    </div>
 </section>
 
-<!-- RESULTS -->
-<section id="results" class="glass p-12 rounded-3xl border-t-4 border-blue-500">
+<section id="results" class="glass p-12 rounded-[3.5rem] border-t-4 border-blue-500">
     <h2 class="text-3xl font-black mb-12 text-center uppercase tracking-tight">
-        Results & <span class="text-blue-500">Analysis</span>
+        Results &amp; <span class="text-blue-500">Analysis</span>
     </h2>
 
     <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -158,81 +102,70 @@
         </div>
 
         <div class="space-y-6">
-            <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10">
-                <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Accuracy</span>
-                <span class="text-blue-400 font-mono font-black text-3xl">90.65%</span>
+            <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner">
+                <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">
+                    Accuracy / Performance
+                </span>
+                <span class="text-blue-400 font-mono font-black text-3xl">XX.X%</span>
             </div>
 
             <p class="text-slate-500 text-sm italic text-justify leading-relaxed">
-                The baseline acoustic assessment achieved 90.65% accuracy across three speaker classes, validating the preprocessing pipeline and MFCC feature extraction strategy.
+                Quantifiable outcomes and evaluation metrics compared to baselines.
             </p>
-        </div>
-    </div>
-</section>
-
-<!-- TEAM -->
-<section id="team" class="text-center pt-10 border-t border-slate-900">
-    <h2 class="text-xs font-black text-slate-600 uppercase tracking-widest mb-12">
-        Academic Credits
-    </h2>
-
-    <div class="flex justify-center gap-10">
-        <div class="glass px-12 py-8 rounded-2xl border-b-4 border-blue-600">
-            <p class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-widest">Student</p>
-            <p class="font-black text-xl text-slate-100">Arushi Srivastava</p>
-            <p class="text-xs text-slate-500 mt-1">2427030204</p>
         </div>
     </div>
 </section>
 
 </main>
 
-<footer class="py-12 text-center border-t border-slate-900">
-    <p class="text-slate-600 text-xs font-bold tracking-widest uppercase mb-2">
+<footer class="py-12 text-center bg-black/40 border-t border-slate-900">
+    <p class="text-slate-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">
         Manipal University Jaipur
     </p>
-    <p class="text-slate-500 text-xs uppercase opacity-50">
-        Department of Computer Science & Engineering • 2026
+    <p class="text-slate-500 text-[9px] font-medium tracking-[0.2em] uppercase opacity-50">
+        Department of Computer Science &amp; Engineering • 2026
     </p>
 </footer>
 
 <script>
-    // TIMER
-    let sec = 0;
-    function startTimer() {
-        setInterval(() => {
-            sec++;
-            let m = Math.floor(sec / 60);
-            let s = sec % 60;
-            document.getElementById('displayTime').innerText =
-                `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
-        }, 1000);
-    }
+let sec = 0;
+function startTimer() {
+    setInterval(() => {
+        sec++;
+        let m = Math.floor(sec / 60);
+        let s = sec % 60;
+        document.getElementById('displayTime').innerText =
+            `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    }, 1000);
+}
 
-    // RESULTS CHART
-    const ctx = document.getElementById('resultsChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Baseline', 'Our Model'],
-            datasets: [{
-                data: [70, 90.65],
-                backgroundColor: ['#1e293b', '#3b82f6'],
-                borderRadius: 15,
-                barThickness: 50
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                y: { beginAtZero: true, max: 100 },
-                x: { grid: { display: false } }
-            }
+const ctx = document.getElementById('resultsChart').getContext('2d');
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Existing System', 'Our Solution'],
+        datasets: [{
+            data: [70, 92],
+            backgroundColor: ['#1e293b', '#3b82f6'],
+            borderRadius: 15,
+            barThickness: 50
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            y: { beginAtZero: true },
+            x: { grid: { display: false } }
         }
-    });
+    }
+});
 </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
