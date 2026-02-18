@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Code | Smart Speech Therapy Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-950 text-slate-200 font-sans">
+
+<div class="max-w-6xl mx-auto py-16 px-6 space-y-16">
+
+    <!-- HEADER -->
+    <div class="text-center">
+        <h1 class="text-4xl font-extrabold text-blue-400 mb-4">
+            Smart Speech Therapy Assistant
+        </h1>
+        <p class="text-slate-400">
+            Dataset Cleaning & Dysarthria Detection Model Implementation
+        </p>
+    </div>
+
+    <!-- DATA CLEANING SECTION -->
+    <section class="bg-slate-900 p-8 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-bold text-green-400 mb-4">
+            <i class="fas fa-database mr-2"></i> Dataset Preprocessing Script
+        </h2>
+
+        <p class="text-slate-400 mb-6">
+            This script performs resampling (16 kHz), silence trimming, 
+            fixed-length normalization (2 seconds), and MFCC extraction 
+            for both dysarthric and non-dysarthric speech samples.
+        </p>
+
+        <a href="https://github.com/arushi-1011/pbl_project/blob/main/clean_dataset.py"
+           target="_blank"
+           class="inline-block px-6 py-3 bg-green-600 rounded-xl font-bold hover:bg-green-500 transition">
+           View clean_dataset.py on GitHub
+        </a>
+    </section>
+
+    <!-- TRAINING SECTION -->
+    <section class="bg-slate-900 p-8 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-bold text-blue-400 mb-4">
+            <i class="fas fa-microchip mr-2"></i> Model Training Script
+        </h2>
+
+        <p class="text-slate-400 mb-6">
+            This script implements a speaker-independent dysarthria 
+            detection model using MFCC features and a Random Forest classifier.
+            Evaluation includes accuracy, precision, recall, F1-score, 
+            and confusion matrix visualization.
+        </p>
+
+        <a href="https://github.com/arushi-1011/pbl_project/blob/main/train_model.py"
+           target="_blank"
+           class="inline-block px-6 py-3 bg-blue-600 rounded-xl font-bold hover:bg-blue-500 transition">
+           View train_model.py on GitHub
+        </a>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="bg-slate-900 p-8 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-bold text-purple-400 mb-4">
+            <i class="fas fa-chart-bar mr-2"></i> Experimental Results
+        </h2>
+
+        <ul class="space-y-2 text-slate-400 list-disc pl-6">
+            <li>Total Samples: 2104</li>
+            <li>Non-Dysarthric: 535</li>
+            <li>Dysarthric: 1569</li>
+            <li>Speaker-Independent Accuracy: 97.19%</li>
+            <li>Evaluation Metrics: Accuracy, Precision, Recall, F1-score</li>
+        </ul>
+    </section>
+
+    <!-- BACK BUTTON -->
+    <div class="text-center pt-8">
+        <a href="index.html"
+           class="px-8 py-3 bg-slate-700 rounded-xl font-bold hover:bg-slate-600 transition">
+            ← Back to Presentation
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
