@@ -211,14 +211,25 @@ plt.show()
 
 <h1>Execution Output</h1>
 <pre>
-Extracting features...
-Total samples: 2104
+Feature extraction complete.
+Train samples: 1500
+Test samples: 604
 
-Class Distribution:
-Non-dysarthric: 535
-Dysarthric: 1569
+Training model (Speaker-Independent)...
 
 Speaker-Independent Accuracy: 97.19 %
+
+Classification Report:
+
+                precision    recall  f1-score   support
+
+Non-Dysarthric       0.98      0.93      0.96       199
+    Dysarthric       0.97      0.99      0.98       405
+
+      accuracy                           0.97       604
+     macro avg       0.97      0.96      0.97       604
+  weighted avg       0.97      0.97      0.97       604
+
 
 Confusion Matrix:
 [[186  13]
