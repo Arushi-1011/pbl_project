@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -246,5 +246,195 @@
         });
     
 </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBL Presentation | 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); }
+        .gradient-text { background: linear-gradient(90deg,#60a5fa,#a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        #timerContainer { background:#ffffff; color:#020617; box-shadow:0 10px 40px rgba(0,0,0,0.8); border:3px solid #3b82f6; z-index:1000; }
+        @keyframes flicker { 0%,100%{background-color:#ffffff}50%{background-color:#fca5a5} }
+        .timer-warning { animation:flicker 1s infinite; border:3px solid #ef4444!important; color:#b91c1c!important; }
+        .timer-stop { background-color:#991b1b!important; color:#ffffff!important; border:3px solid #f87171!important; animation:none; }
+    </style>
+</head>
+<body>
+
+    <div id="timerContainer" class="fixed bottom-10 right-10 px-8 py-4 rounded-3xl flex items-center gap-4 transition-all">
+        <i class="fas fa-hourglass-start text-blue-600 text-2xl" id="timerIcon"></i>
+        <span id="displayTime" class="text-4xl font-black font-mono tracking-tighter">00:00</span>
+    </div>
+
+    <nav class="fixed w-full z-50 glass border-b border-slate-800/50 px-8 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="bg-white p-1 rounded flex items-center justify-center shadow-md" style="height:48px;width:48px;">
+                <img src="mujlogo.jpg" alt="MUJ" class="h-full w-auto object-contain" onerror="this.src='https://via.placeholder.com/50?text=MUJ'">
+            </div>
+            <div class="flex flex-col text-left">
+                <span class="text-xl font-black text-white leading-none uppercase tracking-tighter">PBL <span class="text-blue-500 italic">2026</span></span>
+                <span class="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-1">Dept. of Computer Science & Engineering</span>
+            </div>
+        </div>
+        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-bold opacity-70">
+            <a href="#problem" class="hover:text-blue-400 transition">Problem</a>
+            <a href="#methodology" class="hover:text-blue-400 transition">Methodology</a>
+            <a href="#results" class="hover:text-blue-400 transition">Results</a>
+            <a href="#team" class="hover:text-blue-400 transition">Team</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-48 pb-32 space-y-32">
+
+        <!-- HERO -->
+        <section class="text-center">
+            <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">ID: 2427030204 &nbsp;|&nbsp; IV Semester &nbsp;|&nbsp; Jan–May 2026</div>
+            <h1 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase leading-tight"><span class="gradient-text">Speech Therapy Assistant</span></h1>
+            <p class="text-slate-400 max-w-xl mx-auto italic text-base leading-relaxed border-l-2 border-blue-500/30 pl-6 text-left">
+                An AI-powered system that automatically detects dysarthria from voice recordings and helps patients with personalized speech therapy — making assessment faster, objective, and accessible to everyone.
+            </p>
+        </section>
+
+        <!-- PROBLEM -->
+        <section id="problem" class="grid md:grid-cols-2 gap-12 items-stretch">
+            <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600">
+                <h2 class="text-3xl font-extrabold mb-4">Problem Statement</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">Dysarthria is a speech disorder caused by brain-related conditions like Parkinson's disease, stroke, and cerebral palsy. It makes speech slurred, slow, or unclear. Currently, doctors assess it manually by listening — which is subjective, expensive, and not available in rural areas. Many patients don't get timely help due to a shortage of trained speech therapists. Existing digital tools mainly classify speech but do not provide personalized therapy support. There is a need for an intelligent system that can automatically detect dysarthria and help patients with customized feedback and exercises.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="glass p-7 rounded-3xl border-r-4 border-blue-500/50">
+                    <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-3">Literature Review</h3>
+                    <ul class="text-xs text-slate-500 space-y-2 list-disc pl-5">
+                        <li>Existing research uses MFCC features and deep learning models like CNNs and LSTMs to detect dysarthric speech.</li>
+                        <li>Studies like Baevski et al. (Wav2Vec2) and Zakariah et al. (MFCC) show strong results but focus only on detection, not therapy.</li>
+                        <li>Some platforms provide real-time feedback for articulation training but are not designed for dysarthria specifically.</li>
+                        <li>Teletherapy apps have improved access for remote patients but still rely on manual therapist input.</li>
+                        <li>No existing system combines automatic dysarthria detection with personalized therapy generation in one place.</li>
+                    </ul>
+                </div>
+                <div class="glass p-7 rounded-3xl border-r-4 border-purple-500/50">
+                    <h3 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-3">Research Gap / Innovation</h3>
+                    <ul class="text-xs text-slate-500 space-y-2 list-disc pl-5">
+                        <li>Most dysarthria tools only detect or classify speech — they don't suggest what the patient should do next.</li>
+                        <li>Detection and therapy are handled separately — there is no single unified system for both.</li>
+                        <li>Exercises provided by existing apps are the same for everyone — not based on how the individual patient speaks.</li>
+                        <li>This project builds one system that detects dysarthria from voice and also gives the patient personalized therapy suggestions.</li>
+                        <li>It uses the TORGO dataset — real voice recordings of dysarthric patients — to train and test the system.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- METHODOLOGY -->
+        <section id="methodology" class="space-y-10">
+            <h2 class="text-4xl font-black text-center uppercase tracking-tight">System <span class="text-blue-500">Methodology</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl">
+                    <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-3 uppercase text-xs tracking-widest">Dataset</h3>
+                    <ul class="text-xs text-slate-500 space-y-1">
+                        <li>• <strong class="text-slate-300">TORGO Dataset</strong> — real voice recordings of dysarthric and healthy speakers</li>
+                        <li>• 2,104 voice samples → <span class="text-blue-400 font-bold">4,208</span> after augmentation</li>
+                        <li>• Dysarthric speakers: 1,569 samples</li>
+                        <li>• Healthy speakers: 535 samples</li>
+                        <li>• Audio cleaned: silence removed, standardized to 16 kHz</li>
+                        <li>• Each clip cut to 2 seconds for consistency</li>
+                        <li>• More data created by adding noise, changing speed & pitch</li>
+                    </ul>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-3 uppercase text-xs tracking-widest">Models / Architecture</h3>
+                    <ul class="text-xs text-slate-500 space-y-1">
+                        <li>• 40 MFCC + Delta + Delta-Delta</li>
+                        <li>• RMS Energy, ZCR, Spectral Centroid</li>
+                        <li>• <span class="text-purple-400 font-bold">246 features</span> → SelectKBest → <span class="text-purple-400 font-bold">150 features</span></li>
+                        <li>• StandardScaler normalization</li>
+                        <li>• Models: Random Forest, XGBoost, MLP</li>
+                    </ul>
+                </div>
+                <div class="glass p-8 rounded-3xl border-2 border-green-500/20 bg-green-500/5">
+                    <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-3 uppercase text-xs tracking-widest text-green-400">Pipeline</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">Audio → Augment → Extract Features → Select Top 150 → Scale → Train → Evaluate</p>
+                    <p class="text-xs text-slate-600 mb-4">Tools: librosa · scikit-learn · XGBoost · Audiomentations · Wav2Vec2</p>
+                    <a href="code.html" class="px-6 py-2 bg-green-600 rounded-full text-[10px] font-black hover:bg-green-500 transition">VIEW CODE</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTS -->
+        <section id="results" class="glass p-12 rounded-[3.5rem] border-t-4 border-blue-500">
+            <h2 class="text-3xl font-black mb-10 text-center uppercase tracking-tight">Results & <span class="text-blue-500">Analysis</span></h2>
+            <div class="flex justify-center">
+                <div class="h-80 w-full max-w-2xl"><canvas id="resultsChart"></canvas></div>
+            </div>
+        </section>        </section>
+
+        <!-- TEAM -->
+        <section id="team" class="space-y-16">
+            <div class="text-center border-t border-slate-900 pt-12">
+                <div class="flex flex-wrap justify-center gap-10">
+                    <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-blue-600">
+                        <p class="text-[9px] font-bold text-blue-500 mb-2 uppercase tracking-widest">Project Guide</p>
+                        <p class="font-black text-xl text-slate-100">Dr. Bali Devi</p>
+                    </div>
+                    <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-slate-700">
+                        <p class="text-[9px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Student</p>
+                        <p class="font-black text-xl text-slate-100">Arushi Srivastava</p>
+                        <p class="text-[10px] text-slate-500 mt-1">2427030204 &nbsp;|&nbsp; IV Semester</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 text-center bg-black/40 border-t border-slate-900">
+        <p class="text-slate-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Manipal University Jaipur</p>
+        <p class="text-slate-500 text-[9px] font-medium tracking-[0.2em] uppercase opacity-50">Department of Computer Science & Engineering • PBL-2 • 2025–2026</p>
+    </footer>
+
+    <script>
+        let sec = 0;
+        const timer = setInterval(() => {
+            sec++;
+            const m = Math.floor(sec/60), s = sec%60;
+            document.getElementById('displayTime').innerText = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+            if (sec >= 480 && sec < 600) {
+                document.getElementById('timerContainer').classList.add('timer-warning');
+                document.getElementById('timerIcon').className = 'fas fa-hourglass-half text-red-600 text-2xl';
+            } else if (sec >= 600) {
+                clearInterval(timer);
+                document.getElementById('timerContainer').classList.replace('timer-warning','timer-stop');
+                document.getElementById('displayTime').innerText = "10:00";
+                document.getElementById('timerIcon').className = 'fas fa-hourglass-end text-white text-2xl';
+            }
+        }, 1000);
+
+        new Chart(document.getElementById('resultsChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Moran 2016', 'Senoussaoui 2014', 'Kim 2018', 'MLP', 'RF & XGBoost'],
+                datasets: [{ data: [80, 87, 89, 90, 91], backgroundColor: ['#1e293b','#1e293b','#1e293b','#7c3aed','#3b82f6'], borderRadius: 12, barThickness: 40 }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.raw}%` } } },
+                scales: {
+                    y: { min: 70, max: 100, grid: { color: '#ffffff05' }, ticks: { color: '#475569', callback: v => v+'%' } },
+                    x: { grid: { display: false }, ticks: { color: '#475569', font: { size: 10 } } }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
